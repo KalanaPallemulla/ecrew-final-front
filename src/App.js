@@ -1,9 +1,24 @@
 import "./App.css";
+import { BrowserRouter, Route } from "react-router-dom";
+import Home from "./Client/pages/Home";
+import NavBar from "./Client/components/NavBar";
+import About from "./Client/pages/About";
+import ContactUs from "./Client/pages/ContactUs";
+import Footer from "./Client/components/Footer";
+import Services from "./Client/pages/Services";
+// import
 
 function App() {
   return (
-    <div className="bg-red-400">
-      <h1>hi</h1>
+    <div>
+      <BrowserRouter>
+        <NavBar />
+        <Route path="/" exact component={Home}></Route>
+        <Route path="/AboutUs" exact component={About}></Route>
+        <Route path="/contactUs" exact component={ContactUs}></Route>
+        <Route path="/Services" exact component={Services}></Route>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }
