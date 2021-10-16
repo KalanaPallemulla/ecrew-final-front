@@ -52,7 +52,7 @@ export default function NavBar() {
         <Dialog
           as="div"
           className="fixed inset-0 flex z-40 lg:hidden"
-          onClose={setOpen}
+          onClose={() => setOpen(false)}
         >
           <Transition.Child
             as={Fragment}

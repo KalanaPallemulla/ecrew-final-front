@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Service from "../components/cards/Service";
+import { getAllSalons } from "../../actions/salon";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Services() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getAllSalons());
+  }, []);
+
   return (
     <>
       <div className="md:grid md:grid-cols-4 md:gap-4">
