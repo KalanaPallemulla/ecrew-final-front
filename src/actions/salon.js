@@ -21,3 +21,12 @@ export const getAllSalons = () => async (dispatch) => {
     console.log("Error =>", error);
   }
 };
+
+export const addSalon = (data) => async (dispatch) => {
+  try {
+    const res = await axios.post(`${PORT}/salon`, data);
+  } catch (error) {
+    console.log("Error =>", error);
+    if (error.response.status === 400) console.log(error.response.data.msg);
+  }
+};

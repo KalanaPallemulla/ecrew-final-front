@@ -1,14 +1,19 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Service from "../components/cards/Service";
 import { getAllSalons } from "../../actions/salon";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Services() {
   const dispatch = useDispatch();
+  const [search, setSearch] = useState("");
+
+  const { salons, salonLoading } = useSelector((state) => state.salon);
 
   useEffect(() => {
     dispatch(getAllSalons());
   }, []);
+
+  console.log(salons);
 
   return (
     <>
@@ -23,6 +28,8 @@ export default function Services() {
                 type="search"
                 name="search"
                 placeholder="Search"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
               />
               <button
                 type="submit"
@@ -47,9 +54,16 @@ export default function Services() {
           </div>
         </div>
         <div className="col-span-2	">
-          <Service />
-          <Service />
-          <Service />
+          {salons
+            .filter(
+              (salon) =>
+                salon.name.toLowerCase().indexOf(search.toLowerCase()) >= 0 ||
+                salon.location.toLowerCase().indexOf(search.toLowerCase()) >= 0
+            )
+            .map((salon) => (
+              <Service />
+            ))}
+
           <div className="flex justify-center ">
             <div>
               <ul className="flex pl-0 list-none rounded my-2">

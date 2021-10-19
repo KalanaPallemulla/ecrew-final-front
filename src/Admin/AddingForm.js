@@ -1,11 +1,37 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addSalon } from "../actions/salon";
+import { PORT } from "../actions/types";
 
 export default function AddingForm() {
+  const dispatch = useDispatch();
+  const [name, setName] = useState("");
+  const [location, setLocation] = useState("");
+  const [contact, setContact] = useState("");
+
+  const [open, setOpen] = useState("");
+  const [close, setClose] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    let data = new FormData();
+    data.append("name", name);
+    data.append("location", location);
+    data.append("contact", contact);
+    // image && addData.append("image", image);
+
+    dispatch(addSalon(data));
+  };
+
   return (
     <div className="md:grid md:grid-cols-2 gap-4 md:py-12 py-8">
       <div className="md:px-12">
         <div className="w-full">
-          <form className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+          <form
+            className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+            onSubmit={handleSubmit}
+          >
             <div className="mb-4">
               <label
                 className="block text-gray-700 text-sm font-bold mb-2"
@@ -17,8 +43,9 @@ export default function AddingForm() {
                 className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 id="username"
                 type="text"
-                placeholder="Salon Name
-                "
+                placeholder="Salon Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
             </div>
             <div className="mb-4">
@@ -33,6 +60,24 @@ export default function AddingForm() {
                 id="username"
                 type="text"
                 placeholder="Location"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+              />
+            </div>
+            <div className="mb-4">
+              <label
+                className="block text-gray-700 text-sm font-bold mb-2"
+                for="username"
+              >
+                Contact No
+              </label>
+              <input
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                id="username"
+                type="text"
+                placeholder="Contact no"
+                value={contact}
+                onChange={(e) => setContact(e.target.value)}
               />
             </div>
 
@@ -128,6 +173,11 @@ export default function AddingForm() {
                   <input type="file" className="hidden" />
                 </label>
               </div>
+            </div>
+            <div>
+              <button className="py-2 px-4 border border-gray-400 text-black rounded-lg">
+                Submit
+              </button>
             </div>
           </form>
         </div>
