@@ -6,13 +6,17 @@ import About from "./Client/pages/About";
 import ContactUs from "./Client/pages/ContactUs";
 import Footer from "./Client/components/Footer";
 import Services from "./Client/pages/Services";
-// import
+// admin screens import
+import AddingForm from "./Admin/AddingForm";
 
 function App() {
   return (
     <div>
       <BrowserRouter>
         <NavBar />
+        {/* Admin forms */}
+        <Route path="/AddingForm" exact component={AddingForm}></Route>
+
         <Route path="/" exact component={Home}></Route>
         <Route path="/AboutUs" exact component={About}></Route>
         <Route path="/contactUs" exact component={ContactUs}></Route>
