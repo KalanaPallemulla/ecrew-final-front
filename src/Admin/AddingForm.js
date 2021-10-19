@@ -132,7 +132,32 @@ export default function AddingForm() {
           </form>
         </div>
       </div>
-      <div>9</div>
+      <div className="px-4">
+        <table className="table-auto">
+          <thead>
+            <tr>
+              <th className="w-1/4 px-2">Name</th>
+              <th className="w-1/4 px-2">Image</th>
+              <th className="w-1/4 px-2">Add</th>
+              <th className="w-1/4 px-2">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-t ">
+              <td className="p-2">Intro to CSS</td>
+              <td className="p-2">Adam</td>
+              <td className="p-2">858</td>
+              <td className="p-2">858</td>
+            </tr>
+            <tr className="border-t ">
+              <td className="p-2">Intro to CSS</td>
+              <td className="p-2">Adam</td>
+              <td className="p-2">858</td>
+              <td className="p-2">858</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
