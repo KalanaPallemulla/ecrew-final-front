@@ -15,7 +15,7 @@ function App() {
       <BrowserRouter>
         <NavBar />
         {/* Admin forms */}
-        <Route path="/AddingForm" exact component={AddingForm}></Route>
+        <Route path="/admin" exact component={AddingForm}></Route>
 
         <Route path="/" exact component={Home}></Route>
         <Route path="/AboutUs" exact component={About}></Route>

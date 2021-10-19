@@ -2,7 +2,9 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addSalon } from "../actions/salon";
-import { PORT } from "../actions/types";
+import { TimePicker } from "antd";
+import "antd/dist/antd.css";
+import moment from "moment";
 
 export default function AddingForm() {
   const dispatch = useDispatch();
@@ -23,6 +25,8 @@ export default function AddingForm() {
 
     dispatch(addSalon(data));
   };
+
+  const format = "HH:mm";
 
   return (
     <div className="md:grid md:grid-cols-2 gap-4 md:py-12 py-8">
@@ -92,32 +96,10 @@ export default function AddingForm() {
                 </label>
                 <div className="container mx-auto">
                   <div className="inline-flex text-lg border rounded-md shadow-lg p-2">
-                    <select
-                      name=""
-                      id=""
-                      className="px-2 outline-none appearance-none bg-transparent"
-                    >
-                      <option value="01">01</option>
-                      <option value="02">02</option>
-                      <option value="02">03</option>
-                    </select>
-                    <span className="px-2">:</span>
-                    <select
-                      name=""
-                      id=""
-                      className="px-2 outline-none appearance-none bg-transparent"
-                    >
-                      <option value="00">00</option>
-                      <option value="01">01</option>
-                    </select>
-                    <select
-                      name=""
-                      id=""
-                      className="px-2 outline-none appearance-none bg-transparent"
-                    >
-                      <option value="AM">AM</option>
-                      <option value="PM">PM</option>
-                    </select>
+                    <TimePicker
+                      defaultValue={moment("00:00", format)}
+                      format={format}
+                    />{" "}
                   </div>
                 </div>
               </div>
@@ -134,32 +116,10 @@ export default function AddingForm() {
                   </label>
                   <div className="container mx-auto">
                     <div className="inline-flex text-lg border rounded-md shadow-lg p-2">
-                      <select
-                        name=""
-                        id=""
-                        className="px-2 outline-none appearance-none bg-transparent"
-                      >
-                        <option value="01">01</option>
-                        <option value="02">02</option>
-                        <option value="02">03</option>
-                      </select>
-                      <span className="px-2">:</span>
-                      <select
-                        name=""
-                        id=""
-                        className="px-2 outline-none appearance-none bg-transparent"
-                      >
-                        <option value="00">00</option>
-                        <option value="01">01</option>
-                      </select>
-                      <select
-                        name=""
-                        id=""
-                        className="px-2 outline-none appearance-none bg-transparent"
-                      >
-                        <option value="AM">AM</option>
-                        <option value="PM">PM</option>
-                      </select>
+                      <TimePicker
+                        defaultValue={moment("00:00", format)}
+                        format={format}
+                      />{" "}
                     </div>
                   </div>
                 </div>
