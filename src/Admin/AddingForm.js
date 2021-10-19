@@ -123,7 +123,7 @@ export default function AddingForm() {
                   </div>
                 </div>
               </div>
-              <div className="ml-36">
+              <div className="ml-36 mt-4">
                 <label className="flex flex-col items-center px-2 py-3 bg-white rounded-md shadow-md tracking-wide uppercase border border-blue cursor-pointer hover:bg-purple-600 hover:text-white text-purple-600 ease-linear transition-all duration-150">
                   <i className="fas fa-cloud-upload-alt "></i>
                   <span className="mt-2 text-xs leading-normal">

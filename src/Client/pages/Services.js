@@ -61,7 +61,7 @@ export default function Services() {
                 salon.location.toLowerCase().indexOf(search.toLowerCase()) >= 0
             )
             .map((salon) => (
-              <Service />
+              <Service key={salon._id} salon={salon} />
             ))}
 
           <div className="flex justify-center ">
