@@ -11,9 +11,7 @@ export default function Services() {
 
   useEffect(() => {
     dispatch(getAllSalons());
-  }, []);
-
-  console.log(salons);
+  }, [getAllSalons]);
 
   return (
     <>

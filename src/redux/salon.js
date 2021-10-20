@@ -11,7 +11,7 @@ const initialState = {
   salons: [],
   salonLoading: true,
   error: null,
-  addSalon: false,
+  addSalonSuc: null,
 };
 
 export default function (state = initialState, action) {
@@ -30,7 +30,7 @@ export default function (state = initialState, action) {
       };
     case ADD_SALON_SUCCESS:
       return {
-        addSalon: payload,
+        addSalonSuc: payload,
         error: null,
       };
     case ADD_SALON_FAIL:
