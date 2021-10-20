@@ -87,12 +87,11 @@ export default function AddingForm() {
 
             <div className="mb-4 flex flex-row">
               <div>
-                {" "}
                 <label
                   className="block text-gray-700 text-sm font-bold mb-2"
                   for="username"
                 >
-                  open Time
+                  Closing Time
                 </label>
                 <div className="container mx-auto">
                   <div className="inline-flex text-lg border rounded-md shadow-lg p-2">
@@ -124,7 +123,7 @@ export default function AddingForm() {
                   </div>
                 </div>
               </div>
-              <div className="">
+              <div className="ml-36 mt-4">
                 <label className="flex flex-col items-center px-2 py-3 bg-white rounded-md shadow-md tracking-wide uppercase border border-blue cursor-pointer hover:bg-purple-600 hover:text-white text-purple-600 ease-linear transition-all duration-150">
                   <i className="fas fa-cloud-upload-alt "></i>
                   <span className="mt-2 text-xs leading-normal">
@@ -142,7 +141,28 @@ export default function AddingForm() {
           </form>
         </div>
       </div>
-      <div>9</div>
+      <div className="px-4">
+        <table className="table-auto">
+          <thead>
+            <tr>
+              <th className="w-1/4 px-2">Name</th>
+              <th className="w-1/4 px-2">Image</th>
+              <th className="w-1/4 px-2">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr className="border-t ">
+              <td className="p-2">Intro to CSS</td>
+              <td className="p-2">Adam</td>
+              <td className="p-2">
+                <button class="bg-transparent hover:bg-red-500 text-red-700  hover:text-white py-1 px-2 border border-red-500 hover:border-transparent rounded">
+                  Button
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
