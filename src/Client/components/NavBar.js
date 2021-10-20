@@ -16,24 +16,19 @@ const navigation = {
       url: "/",
     },
     {
-      id: "Shop",
-      name: "Shop",
-      url: "/shop",
-    },
-    {
-      id: "Projects",
-      name: "Projects",
-      url: "/projects",
-    },
-    {
-      id: "ContactUs",
-      name: "ContactUs",
-      url: "/ContactUs",
-    },
-    {
       id: "Services",
       name: "Services",
       url: "/Services",
+    },
+    {
+      id: "AboutUs",
+      name: "AboutUs",
+      url: "/AboutUs",
+    },
+    {
+      id: "contactUs",
+      name: "contactUs",
+      url: "/contactUs",
     },
   ],
 };
@@ -115,20 +110,20 @@ export default function NavBar() {
                 </div>
                 <div className="flow-root">
                   <Link
-                    to="/Shop"
+                    to="/Services"
                     href="#"
                     className="-m-2 p-2 block font-medium text-gray-900"
                   >
-                    Shop
+                    Services
                   </Link>
                 </div>
                 <div className="flow-root">
                   <Link
-                    to="/Projects"
+                    to="/AboutUs"
                     href="#"
                     className="-m-2 p-2 block font-medium text-gray-900"
                   >
-                    Projects
+                    AboutUs
                   </Link>
                 </div>
                 <div className="flow-root">
@@ -138,15 +133,6 @@ export default function NavBar() {
                     className="-m-2 p-2 block font-medium text-gray-900"
                   >
                     ContactUs
-                  </Link>
-                </div>
-                <div className="flow-root">
-                  <Link
-                    to="/Services"
-                    href="#"
-                    className="-m-2 p-2 block font-medium text-gray-900"
-                  >
-                    Services
                   </Link>
                 </div>
               </div>
