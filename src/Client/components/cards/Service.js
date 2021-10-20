@@ -18,12 +18,12 @@ export default function Service({ salon }) {
                 alt="salonImage"
               />
             )}
-            <div className="md:hidden absolute inset-0 h-full p-6 pb-6 flex flex-col-reverse justify-start items-start bg-gradient-to-b from-transparent via-transparent to-gray-900">
+            <div className="md:hidden absolute inset-0 h-full w-full p-6 pb-6 flex flex-col-reverse justify-start items-start bg-gradient-to-b from-transparent via-transparent to-gray-900">
               <h3 className="w-full font-bold text-2xl text-white leading-tight mb-2">
-                HOTEL AMANEE
+                {salon.name}{" "}
               </h3>
               <h4 className="w-full text-xl text-gray-100 leading-tight">
-                Bienvenido a
+                {salon.location}{" "}
               </h4>
             </div>
             <svg
@@ -36,7 +36,7 @@ export default function Service({ salon }) {
           </div>
 
           <div className="z-10 order-2 md:order-1 w-full h-full md:w-3/5 flex items-center -mt-6 md:mt-0">
-            <div className="p-8 md:pr-18 md:pl-14 md:py-12 mx-2 md:mx-0 h-full bg-white rounded-lg md:rounded-none md:rounded-l-lg shadow-xl md:shadow-none">
+            <div className="w-full p-8 md:pr-18 md:pl-14 md:py-12 mx-2 md:mx-0 h-full bg-white rounded-lg md:rounded-none md:rounded-l-lg shadow-xl md:shadow-none">
               <h4 className="hidden md:block text-xl text-gray-400">
                 {salon.location}{" "}
               </h4>
@@ -44,17 +44,69 @@ export default function Service({ salon }) {
                 {salon.name}{" "}
               </h3>
               <p className="text-gray-600 text-justify">
-                <ul class="list-disc">
-                  {!salon.openTime ? "" : <li>Open Time : {salon.openTime}</li>}
+                <ul class="">
+                  {!salon.openTime ? (
+                    ""
+                  ) : (
+                    <li className="flex flex-row mt-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 mr-1"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>{" "}
+                      Open Time : {salon.openTime}
+                    </li>
+                  )}
                   {!salon.closeTime ? (
                     ""
                   ) : (
-                    <li>Close Time : {salon.closeTime}</li>
+                    <li className="flex flex-row mt-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5 mr-1"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>{" "}
+                      Close Time : {salon.closeTime}
+                    </li>
                   )}
                   {!salon.contact ? (
                     ""
                   ) : (
-                    <li>Contact Number: {salon.contact} </li>
+                    <li className="flex flex-row mt-2">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5 mr-1"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                        />
+                      </svg>
+                      Contact Number: {salon.contact}{" "}
+                    </li>
                   )}
                 </ul>
               </p>
