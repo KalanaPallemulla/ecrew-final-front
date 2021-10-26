@@ -8,6 +8,7 @@ import Footer from "./Client/components/Footer";
 import Services from "./Client/pages/Services";
 // admin screens import
 import AddingForm from "./Admin/AddingForm";
+import Form from "./Client/pages/Form";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <NavBar />
         {/* Admin forms */}
         <Route path="/admin" exact component={AddingForm}></Route>
+        <Route path="/form" exact component={Form}></Route>
 
         <Route path="/" exact component={Home}></Route>
         <Route path="/AboutUs" exact component={About}></Route>
