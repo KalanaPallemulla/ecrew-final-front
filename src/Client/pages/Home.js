@@ -1,11 +1,26 @@
-import React from "react";
-import OurTeam from "./OurTeam";
+import React, { useEffect, useState } from "react";
+import Service from "../components/cards/Service";
+import { getAllSalons } from "../../actions/salon";
+import { useDispatch, useSelector } from "react-redux";
+import ServiceImage from "../images/salon-working-01.png";
+import { Scrollbars } from "react-custom-scrollbars";
 
 export default function Home() {
+  const dispatch = useDispatch();
+  const [search, setSearch] = useState("");
+
+  const { salons, salonLoading } = useSelector((state) => state.salon);
+
+  useEffect(() => {
+    dispatch(getAllSalons());
+  }, []);
+
+  console.log(salons);
+
   return (
     <div>
       {" "}
-      <div className="relative bg-white overflow-hidden my-36">
+      {/* <div className="relative bg-white overflow-hidden my-36">
         <div className="max-w-7xl mx-auto">
           <div className="relative lg:pt-12 z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
             <svg
@@ -24,7 +39,7 @@ export default function Home() {
                   <span className="block xl:inline">Ecrew </span>{" "}
                   {/* <span className="block text-gray-600 xl:inline">
               Order Your dream Product{" "}
-            </span> */}
+            </span> 
                 </h1>
                 <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                   We make your dream design a reality...
@@ -58,8 +73,37 @@ export default function Home() {
             alt=""
           />
         </div>
-      </div>{" "}
-      <OurTeam />
+      </div> */}
+      <>
+        <div className="md:h-full lg:h-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5 gap-5 mt-6">
+          {/* <!--Card 1--> */}
+          <div className="border-r border-gray-200 flex md:flex-col flex-row justify-center md:justify-start px-8">
+            sdfghjkjhgfbhj
+          </div>
+          {/* <!--Card 2--> */}
+          <div className="border-r border-gray-200 col-span-3	px-4">
+            <Scrollbars style={{ height: 500 }}>
+              {salons
+                .filter(
+                  (salon) =>
+                    salon.name.toLowerCase().indexOf(search.toLowerCase()) >=
+                      0 ||
+                    salon.location
+                      .toLowerCase()
+                      .indexOf(search.toLowerCase()) >= 0
+                )
+                .map((salon) => (
+                  <Service key={salon._id} salon={salon} />
+                ))}
+            </Scrollbars>
+          </div>
+
+          {/* <!--Card 3--> */}
+          <div className="border-r border-gray-200">
+            <img alt="meaningfull" className="pt-44" src={ServiceImage} />
+          </div>
+        </div>
+      </>
     </div>
   );
 }
