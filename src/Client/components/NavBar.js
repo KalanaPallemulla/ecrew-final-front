@@ -1,4 +1,5 @@
 import { Fragment, useState } from "react";
+import logo from "../images/logo.png";
 import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
 import {
   MenuIcon,
@@ -165,11 +166,11 @@ export default function NavBar() {
               <div className="ml-4 flex lg:ml-0">
                 <a href="#">
                   <span className="sr-only">Workflow</span>
-                  <img
-                    className="h-8 w-auto"
+                  {/* <img
                     src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
                     alt=""
-                  />
+                  /> */}
+                  <img className="h-8 w-auto" src={logo} />
                 </a>
               </div>
               {/* Flyout menus */}
