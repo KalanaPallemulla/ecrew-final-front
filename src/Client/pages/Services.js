@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Service from "../components/cards/Service";
 import { getAllSalons } from "../../actions/salon";
 import { useDispatch, useSelector } from "react-redux";
+import img from "../images/salon-working-01.png";
 
 export default function Services() {
   const dispatch = useDispatch();
@@ -51,7 +52,7 @@ export default function Services() {
             </div>
           </div>
         </div>
-        <div className="col-span-2	">
+        <div className="col-span-2	border-r border-l md:border-solid px-4">
           {salons
             .filter(
               (salon) =>
@@ -59,7 +60,7 @@ export default function Services() {
                 salon.location.toLowerCase().indexOf(search.toLowerCase()) >= 0
             )
             .map((salon) => (
-              <Service />
+              <Service key={salon._id} salon={salon} />
             ))}
 
           <div className="flex justify-center ">
@@ -94,7 +95,9 @@ export default function Services() {
             </div>
           </div>
         </div>
-        <div></div>
+        <div className="hidden sm:block">
+          <img className="mt-64" src={img} />
+        </div>
       </div>
     </>
   );
