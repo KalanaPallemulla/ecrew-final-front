@@ -110,7 +110,7 @@ export default function Service({ salon }) {
                   )}
                 </ul>
               </p>
-              <div className="flex justify-between w-2/3 text-gray-600">
+              <div className="grid grid-cols-2 w-2/3 text-gray-600">
                 <div className="flex flex-row">
                   Parking{" "}
                   <img
@@ -132,8 +132,6 @@ export default function Service({ salon }) {
                     src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/000000/external-check-multimedia-kiranshastry-solid-kiranshastry.png"
                   />
                 </div>
-              </div>
-              <div className="flex justify-between w-2/3 text-gray-600">
                 <div className="flex flex-row">
                   Washrooms{" "}
                   <img
