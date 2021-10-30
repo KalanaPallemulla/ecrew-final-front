@@ -114,6 +114,7 @@ export default function Service({ salon }) {
                 <div className="flex flex-row">
                   Parking{" "}
                   <img
+                    alt="iconimage"
                     className="w-6"
                     src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/000000/external-check-multimedia-kiranshastry-solid-kiranshastry.png"
                   />
@@ -121,6 +122,7 @@ export default function Service({ salon }) {
                 <div className="flex flex-row">
                   Wifi
                   <img
+                    alt="iconimage1"
                     className="w-6"
                     src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/000000/external-check-multimedia-kiranshastry-solid-kiranshastry.png"
                   />
@@ -128,6 +130,7 @@ export default function Service({ salon }) {
                 <div className="flex flex-row">
                   Flexible Service
                   <img
+                    alt="iconimage3"
                     className="w-6"
                     src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/000000/external-check-multimedia-kiranshastry-solid-kiranshastry.png"
                   />
@@ -135,6 +138,7 @@ export default function Service({ salon }) {
                 <div className="flex flex-row">
                   Washrooms{" "}
                   <img
+                    alt="iconimage5"
                     className="w-6"
                     src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/000000/external-check-multimedia-kiranshastry-solid-kiranshastry.png"
                   />
