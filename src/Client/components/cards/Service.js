@@ -111,19 +111,35 @@ export default function Service({ salon }) {
                 </ul>
               </p>
               <div className="flex justify-between w-2/3 text-gray-600">
-                <div>
-                  Parking <i className="far fa-check-square pl-2"></i>
+                <div className="flex flex-row">
+                  Parking{" "}
+                  <img
+                    className="w-6"
+                    src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/000000/external-check-multimedia-kiranshastry-solid-kiranshastry.png"
+                  />
                 </div>
-                <div>
-                  Wifi<i className="far fa-check-square pl-2"></i>
+                <div className="flex flex-row">
+                  Wifi
+                  <img
+                    className="w-6"
+                    src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/000000/external-check-multimedia-kiranshastry-solid-kiranshastry.png"
+                  />
                 </div>
-                <div>
-                  Flexible Service<i className="far fa-check-square pl-2"></i>
+                <div className="flex flex-row">
+                  Flexible Service
+                  <img
+                    className="w-6"
+                    src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/000000/external-check-multimedia-kiranshastry-solid-kiranshastry.png"
+                  />
                 </div>
               </div>
               <div className="flex justify-between w-2/3 text-gray-600">
-                <div>
-                  Washrooms <i className="far fa-check-square pl-2"></i>
+                <div className="flex flex-row">
+                  Washrooms{" "}
+                  <img
+                    className="w-6"
+                    src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/000000/external-check-multimedia-kiranshastry-solid-kiranshastry.png"
+                  />
                 </div>
               </div>
             </div>
