@@ -19,13 +19,58 @@ export default function Form() {
                       className="block mb-2 text-sm font-bold text-gray-700"
                       for="firstName"
                     >
-                      input label{" "}
+                      Full Name{" "}
                     </label>
                     <input
                       className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                       id="firstName"
                       type="text"
-                      placeholder="First Name"
+                      placeholder="Full Name"
+                    />
+                  </div>
+
+                  <div className="mb-4 md:mr-2 ">
+                    <label
+                      className="block mb-2 text-sm font-bold text-gray-700"
+                      for="firstName"
+                    >
+                      Location{" "}
+                    </label>
+                    <input
+                      className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                      id="firstName"
+                      type="text"
+                      placeholder="Location"
+                    />
+                  </div>
+
+                  <div className="mb-4 md:mr-2 ">
+                    <label
+                      className="block mb-2 text-sm font-bold text-gray-700"
+                      for="firstName"
+                    >
+                      Contact Number{" "}
+                    </label>
+                    <input
+                      className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                      id="firstName"
+                      type="text"
+                      placeholder="Contact Number "
+                    />
+                  </div>
+
+                  <div className="mb-4 md:mr-2 ">
+                    <label
+                      className="block mb-2 text-sm font-bold text-gray-700"
+                      for="firstName"
+                    >
+                      Description{" "}
+                    </label>
+                    <input
+                      className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                      id="firstName"
+                      type="text"
+                      placeholder="Description"
                     />
                   </div>
 
@@ -47,3 +92,5 @@ export default function Form() {
     </div>
   );
 }
+
+//name location contact number decription
