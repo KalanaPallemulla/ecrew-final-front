@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
 import logo from "../images/logo.png";
-import { Dialog, Popover, Tab, Transition } from "@headlessui/react";
+import { Dialog, Popover, Transition } from "@headlessui/react";
 import {
   MenuIcon,
   SearchIcon,
@@ -164,14 +164,14 @@ export default function NavBar() {
 
               {/* Logo */}
               <div className="ml-4 flex lg:ml-0">
-                <a href="#">
+                <Link href="#">
                   <span className="sr-only">Workflow</span>
                   {/* <img
                     src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
                     alt=""
                   /> */}
-                  <img className="h-8 w-auto" src={logo} />
-                </a>
+                  <img className="h-8 w-auto" alt="alter" src={logo} />
+                </Link>
               </div>
               {/* Flyout menus */}
               <Popover.Group className="hidden lg:ml-8 lg:block lg:self-stretch">
@@ -223,15 +223,18 @@ export default function NavBar() {
               <div className="ml-auto flex items-center">
                 {/* Search */}
                 <div className="flex lg:ml-6">
-                  <a href="#" className="p-2 text-gray-400 hover:text-gray-500">
+                  <Link
+                    href="#"
+                    className="p-2 text-gray-400 hover:text-gray-500"
+                  >
                     <span className="sr-only">Search</span>
                     <SearchIcon className="w-6 h-6" aria-hidden="true" />
-                  </a>
+                  </Link>
                 </div>
 
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6">
-                  <a href="#" className="group -m-2 p-2 flex items-center">
+                  <Link href="#" className="group -m-2 p-2 flex items-center">
                     <ShoppingBagIcon
                       className="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
                       aria-hidden="true"
@@ -240,7 +243,7 @@ export default function NavBar() {
                       0
                     </span>
                     <span className="sr-only">items in cart, view bag</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
