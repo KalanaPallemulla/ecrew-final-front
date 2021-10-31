@@ -133,6 +133,56 @@ export default function AddingForm() {
                 </label>
               </div>
             </div>
+            <div className="md:grid md:grid-cols-4  text-gray-600 mb-2">
+              <div className="flex flex-row">
+                Parking{" "}
+                <div class="bg-white border-2 rounded border-gray-400 w-5 h-5 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500 ml-2">
+                  <input type="checkbox" class="opacity-0 absolute" />
+                  <svg
+                    class="fill-current hidden w-4 h-4 text-sitetheme-blue pointer-events-none"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
+                  </svg>
+                </div>
+              </div>
+              <div className="flex flex-row">
+                Wifi
+                <div class="bg-white border-2 rounded border-gray-400 w-5 h-5 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500 ml-2">
+                  <input type="checkbox" class="opacity-0 absolute" />
+                  <svg
+                    class="fill-current hidden w-4 h-4 text-sitetheme-blue pointer-events-none"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
+                  </svg>
+                </div>{" "}
+              </div>
+              <div className="flex flex-row">
+                Flexible Service
+                <div class="bg-white border-2 rounded border-gray-400 w-5 h-5 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500 ml-2">
+                  <input type="checkbox" class="opacity-0 absolute" />
+                  <svg
+                    class="fill-current hidden w-4 h-4 text-sitetheme-blue pointer-events-none"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
+                  </svg>
+                </div>
+              </div>
+              <div className="flex flex-row">
+                Washrooms{" "}
+                <div class="bg-white border-2 rounded border-gray-400 w-5 h-5 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500 ml-2">
+                  <input type="checkbox" class="opacity-0 absolute" />
+                  <svg
+                    class="fill-current hidden w-4 h-4 text-sitetheme-blue pointer-events-none"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
             <div>
               <button className="py-2 px-4 border border-gray-400 text-black rounded-lg">
                 Submit
