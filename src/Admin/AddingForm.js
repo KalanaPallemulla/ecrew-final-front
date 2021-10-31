@@ -19,6 +19,10 @@ export default function AddingForm() {
 
   const [openTime, setOpen] = useState("");
   const [closeTime, setClose] = useState("");
+  const [wifi, setWifi] = useState(false);
+  const [parking, setParking] = useState(false);
+  const [ac, setAc] = useState(false);
+  const [image, setImage] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,9 +33,9 @@ export default function AddingForm() {
     data.append("contact", contact);
     data.append("openTime", openTime);
     data.append("closeTime", closeTime);
-    // image && addData.append("image", image);
+    image && data.append("image", image);
 
-    console.log(data);
+    // console.log(data);
     dispatch(addSalon(data));
   };
 
@@ -44,6 +48,8 @@ export default function AddingForm() {
       toast.success(addSalonSuc);
     }
   }, [error]);
+
+  console.log("Image", image);
 
   return (
     <>
@@ -162,7 +168,13 @@ export default function AddingForm() {
                     <span className="mt-2 text-xs leading-normal">
                       Select a file
                     </span>
-                    <input type="file" className="hidden" />
+                    <input
+                      type="file"
+                      name="image"
+                      accept="image/*"
+                      hidden
+                      onChange={(e) => setImage(e.target.files[0])}
+                    />
                   </label>
                 </div>
               </div>
