@@ -46,9 +46,10 @@ export default function Service({ salon }) {
             <div className="w-full p-8 md:pr-18 md:pl-14 md:py-12 mx-2 md:mx-0 h-full bg-white rounded-lg md:rounded-none md:rounded-l-lg shadow-xl md:shadow-none">
               <h4 className="hidden md:block text-xl text-gray-400">
                 {salon.location}{" "}
+                <span className="text-gray-400 pl-2 font-light">| Grade A</span>
               </h4>
               <h3 className="hidden md:block font-bold text-2xl text-gray-700">
-                {salon.name}{" "}
+                <div className="flex flex-row"> {salon.name} </div>
               </h3>
               <p className="text-gray-600 text-justify">
                 <ul class="">
@@ -117,39 +118,24 @@ export default function Service({ salon }) {
                   )}
                 </ul>
               </p>
-              <div className="grid grid-cols-2 w-2/3 text-gray-600">
-                <div className="flex flex-row">
-                  Parking{" "}
-                  <img
-                    alt="iconimage"
-                    className="w-6"
-                    src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/000000/external-check-multimedia-kiranshastry-solid-kiranshastry.png"
-                  />
-                </div>
-                <div className="flex flex-row">
-                  Wifi
-                  <img
-                    alt="iconimage1"
-                    className="w-6"
-                    src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/000000/external-check-multimedia-kiranshastry-solid-kiranshastry.png"
-                  />
-                </div>
-                <div className="flex flex-row">
-                  Flexible Service
-                  <img
-                    alt="iconimage3"
-                    className="w-6"
-                    src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/000000/external-check-multimedia-kiranshastry-solid-kiranshastry.png"
-                  />
-                </div>
-                <div className="flex flex-row">
-                  Washrooms{" "}
-                  <img
-                    alt="iconimage5"
-                    className="w-6"
-                    src="https://img.icons8.com/external-kiranshastry-solid-kiranshastry/64/000000/external-check-multimedia-kiranshastry-solid-kiranshastry.png"
-                  />
-                </div>
+              <div className="md:grid md:grid-cols-2 w-2/3 text-gray-600">
+                {salon.parking && (
+                  <div className="flex flex-row">
+                    Parking <div className="icons8-checkmark ml-2"></div>
+                  </div>
+                )}
+                {salon.parking && (
+                  <div className="flex flex-row">
+                    Wifi
+                    <div className="icons8-checkmark ml-2"></div>
+                  </div>
+                )}
+                {salon.ac && (
+                  <div className="flex flex-row">
+                    A/C
+                    <div className="icons8-checkmark ml-2"></div>
+                  </div>
+                )}
               </div>
             </div>
           </div>

@@ -33,6 +33,10 @@ export default function AddingForm() {
     data.append("contact", contact);
     data.append("openTime", openTime);
     data.append("closeTime", closeTime);
+    data.append("parking", parking);
+    data.append("ac", ac);
+    data.append("wifi", wifi);
+
     image && data.append("image", image);
 
     // console.log(data);
@@ -49,7 +53,7 @@ export default function AddingForm() {
     }
   }, [error]);
 
-  console.log("Image", image);
+  console.log("Image", parking);
 
   return (
     <>
@@ -179,14 +183,78 @@ export default function AddingForm() {
                 </div>
               </div>
               <div>
+                <div className="md:grid md:grid-cols-4  text-gray-600 mb-2">
+                  <div className="flex flex-row">
+                    Parking{" "}
+                    <div class="bg-white border-2 rounded border-gray-400 w-5 h-5 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500 ml-2">
+                      <input
+                        type="checkbox"
+                        class="opacity-0 absolute"
+                        name="parking"
+                        onChange={(e) => setParking(e.target.checked)}
+                      />
+                      <svg
+                        class="fill-current hidden w-4 h-4 text-sitetheme-blue pointer-events-none"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
+                      </svg>
+                    </div>
+                  </div>
+                  <div className="flex flex-row">
+                    Wifi
+                    <div class="bg-white border-2 rounded border-gray-400 w-5 h-5 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500 ml-2">
+                      <input
+                        type="checkbox"
+                        class="opacity-0 absolute"
+                        name="wifi"
+                        onChange={(e) => setWifi(e.target.checked)}
+                      />
+                      <svg
+                        class="fill-current hidden w-4 h-4 text-sitetheme-blue pointer-events-none"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
+                      </svg>
+                    </div>{" "}
+                  </div>
+
+                  <div className="flex flex-row">
+                    A/C{" "}
+                    <div class="bg-white border-2 rounded border-gray-400 w-5 h-5 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500 ml-2">
+                      <input
+                        type="checkbox"
+                        class="opacity-0 absolute"
+                        name="ac"
+                        onChange={(e) => setAc(e.target.checked)}
+                      />
+                      <svg
+                        class="fill-current hidden w-4 h-4 text-sitetheme-blue pointer-events-none"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
                 <button className="py-2 px-4 border border-gray-400 text-black rounded-lg">
                   Submit
                 </button>
               </div>
             </form>
+
+            <div>Add Locations</div>
+            <form>
+              <input
+                className="w-48 border border-gray-600 rounded-full p-2"
+                placeholder="Add a location"
+              />
+              <button className="ml-4 p-2 border border-blue-700 hover:bg-blue-700 hover:text-white rounded-full">
+                Add Location
+              </button>
+            </form>
           </div>
         </div>
-        <div></div>
       </div>
     </>
   );

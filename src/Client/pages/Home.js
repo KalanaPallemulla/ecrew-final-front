@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Service from "../components/cards/Service";
-import { getAllSalons } from "../../actions/salon";
+import { getAllSalons, getLocations } from "../../actions/salon";
 import { useDispatch, useSelector } from "react-redux";
 import ServiceImage from "../images/salon-working-01.png";
 import { Scrollbars } from "react-custom-scrollbars";
@@ -8,11 +8,14 @@ import { Scrollbars } from "react-custom-scrollbars";
 export default function Home() {
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
+  const [selectLoc, setSelectLoc] = useState("");
 
   const { salons, salonLoading } = useSelector((state) => state.salon);
+  const { locations, locationLoading } = useSelector((state) => state.location);
 
   useEffect(() => {
     dispatch(getAllSalons());
+    dispatch(getLocations());
   }, []);
 
   return (
@@ -22,9 +25,9 @@ export default function Home() {
         <div className="border-r border-gray-200 flex md:flex-col flex-row justify-center md:justify-start px-8">
           <div>
             {" "}
-            <div className="flex flex-center">
+            <div className="flex flex-center flex-col">
               {/* This is an example component --> */}
-              <div className="pt-2 relative mx-auto text-gray-600">
+              {/* <div className="pt-2 relative mx-auto text-gray-600">
                 <input
                   className="border-2 border-gray-300 bg-white h-10 px-5  px-full w-full rounded-full text-sm focus:outline-none"
                   type="search"
@@ -52,6 +55,25 @@ export default function Home() {
                     />
                   </svg>
                 </button>
+              </div> */}
+              <div className="relative inline-flex mt-4 w-full">
+                <select
+                  onChange={(e) => {
+                    e.preventDefault();
+                    setSelectLoc(e.target.value);
+                  }}
+                  className="border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none"
+                >
+                  <option name="" value="">
+                    Choose a Location
+                  </option>
+                  {!locationLoading &&
+                    locations.map((loc) => (
+                      <option name={loc.name} value={loc.name}>
+                        {loc.name}
+                      </option>
+                    ))}
+                </select>
               </div>
             </div>
           </div>{" "}
@@ -59,16 +81,15 @@ export default function Home() {
         {/* <!--Card 2--> */}
         <div className="border-r border-gray-200 col-span-3	px-4">
           <Scrollbars style={{ height: 500 }}>
-            {salons
-              .filter(
-                (salon) =>
-                  salon.name.toLowerCase().indexOf(search.toLowerCase()) >= 0 ||
-                  salon.location.toLowerCase().indexOf(search.toLowerCase()) >=
-                    0
-              )
-              .map((salon) => (
-                <Service key={salon._id} salon={salon} />
-              ))}
+            {!salonLoading &&
+              salons
+                .filter(
+                  (salon) =>
+                    salon.location
+                      .toLowerCase()
+                      .indexOf(selectLoc.toLowerCase()) >= 0
+                )
+                .map((salon) => <Service key={salon._id} salon={salon} />)}
           </Scrollbars>
         </div>
         <div className="border-r border-gray-200">
