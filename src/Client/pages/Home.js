@@ -4,6 +4,7 @@ import { getAllSalons, getLocations } from "../../actions/salon";
 import { useDispatch, useSelector } from "react-redux";
 import ServiceImage from "../images/salon-working-01.png";
 import { Scrollbars } from "react-custom-scrollbars";
+import SalonCategorySelectBut from "../components/Button/SalonCategorySelectBut";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -65,7 +66,7 @@ export default function Home() {
                   className="border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none"
                 >
                   <option name="" value="">
-                    Choose a Location
+                    {selectLoc === "" ? "Choose a Location" : "Remove Location"}
                   </option>
                   {!locationLoading &&
                     locations.map((loc) => (
@@ -76,7 +77,8 @@ export default function Home() {
                 </select>
               </div>
             </div>
-          </div>{" "}
+          </div>
+          <SalonCategorySelectBut content="Beauty" SalonName="" />
         </div>
         {/* <!--Card 2--> */}
         <div className="border-r border-gray-200 col-span-3	px-4">
