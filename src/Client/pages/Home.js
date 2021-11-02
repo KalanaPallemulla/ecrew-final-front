@@ -59,6 +59,10 @@ export default function Home() {
         </div>
         {/* <!--Card 2--> */}
         <div className="border-r border-gray-200 col-span-3	px-4">
+          <div className="w-full">
+            {" "}
+            <SalonCategorySelectBut content="Beauty" SalonName="" />
+          </div>
           <Scrollbars style={{ height: 500 }}>
             {salons
               .filter(
