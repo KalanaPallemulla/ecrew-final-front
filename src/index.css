@@ -68,3 +68,11 @@
 input:checked + svg {
   display: block;
 }
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: #000066;
+}
