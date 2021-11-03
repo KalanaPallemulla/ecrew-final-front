@@ -8,6 +8,6 @@ export const GET_LOCATIONS_SUCCESS = "GET_LOCATIONS_SUCCESS";
 export const GET_LOCATIONS_FAIL = "GET_LOCATIONS_FAIL";
 
 export const ADD_LOCATION_SUCCESS = "ADD_LOCATION_SUCCESS";
-export const ADD_LOCATIONS_FAIL = "ADD_LOCATIONS_FAIL";
+export const ADD_LOCATION_FAIL = "ADD_LOCATIONS_FAIL";
 
 export const PORT = "http://localhost:8000/api";

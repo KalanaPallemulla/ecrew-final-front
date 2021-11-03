@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addSalon } from "../actions/salon";
+import { addNewLocation, addSalon } from "../actions/salon";
 import { TimePicker } from "antd";
 import "antd/dist/antd.css";
 import { ToastContainer, toast } from "react-toastify";
@@ -23,6 +23,7 @@ export default function AddingForm() {
   const [parking, setParking] = useState(false);
   const [ac, setAc] = useState(false);
   const [image, setImage] = useState("");
+  const [addLocation, setAddLocation] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -54,6 +55,13 @@ export default function AddingForm() {
   }, [error]);
 
   console.log("Image", parking);
+
+  const handleLocationSubmit = (e) => {
+    e.preventDefault();
+
+    const data = { addLocation };
+    dispatch(addNewLocation(data));
+  };
 
   return (
     <>
@@ -244,10 +252,12 @@ export default function AddingForm() {
             </form>
 
             <div>Add Locations</div>
-            <form>
+            <form onSubmit={handleLocationSubmit}>
               <input
                 className="w-48 border border-gray-600 rounded-full p-2"
                 placeholder="Add a location"
+                value={addLocation}
+                onChange={(e) => setAddLocation(e.target.value)}
               />
               <button className="ml-4 p-2 border border-blue-700 hover:bg-blue-700 hover:text-white rounded-full">
                 Add Location

@@ -7,7 +7,7 @@ export default function SalonCategorySelectBut({ content, SalonName }) {
       <button className="flex justify-center py-2 px-4  rounded-full bg-sitetheme-blue text-white  hover:bg-white  border hover-border-sitetheme-blue">
         {/* <Link to="/#"> {content} </Link> */}
         <HashLink smooth to={`/#${SalonName}`}>
-          {content}
+          <div className="text-white hover-text-sitetheme-blue"> {content}</div>
         </HashLink>
       </button>
     </div>

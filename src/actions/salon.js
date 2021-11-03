@@ -6,6 +6,8 @@ import {
   ADD_SALON_FAIL,
   GET_LOCATIONS_SUCCESS,
   GET_LOCATIONS_FAIL,
+  ADD_LOCATION_FAIL,
+  ADD_LOCATION_SUCCESS,
 } from "./types";
 import axios from "axios";
 
@@ -57,6 +59,21 @@ export const getLocations = () => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: GET_LOCATIONS_FAIL,
+      payload: error.response,
+    });
+  }
+};
+
+export const addNewLocation = (data) => async (dispatch) => {
+  try {
+    const res = await axios.post(`${PORT}/salon/locations`, data);
+    dispatch({
+      type: ADD_LOCATION_SUCCESS,
+      payload: res.data,
+    });
+  } catch (error) {
+    dispatch({
+      type: ADD_LOCATION_FAIL,
       payload: error.response,
     });
   }
