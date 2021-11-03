@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import ServiceImage from "../images/salon-working-01.png";
 import { Scrollbars } from "react-custom-scrollbars";
 import SalonCategorySelectBut from "../components/Button/SalonCategorySelectBut";
+import SalonTopic from "../components/Button/SalonTopic";
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -20,9 +21,9 @@ export default function Home() {
 
   return (
     <>
-      <div className="md:h-full lg:h-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5 gap-5 mt-6">
+      <div className="md:h-full lg:h-full grid grid-cols-1 sm:grid-cols-1 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5  mt-6">
         {/* <!--Card 1--> */}
-        <div className="border-r border-gray-200 flex md:flex-col flex-row justify-center md:justify-start px-8">
+        <div className="border-r border-gray-200 flex flex-col  justify-center md:justify-start px-8">
           <div className="flex flex-center">
             {/* This is an example component --> */}
             <div className="pt-2 relative mx-auto text-gray-600">
@@ -59,9 +60,9 @@ export default function Home() {
         </div>
         {/* <!--Card 2--> */}
         <div className="border-r border-gray-200 col-span-3	px-4">
-          <div className="w-full">
+          <div className="w-full flex justify-center">
             {" "}
-            <SalonCategorySelectBut content="Beauty" SalonName="" />
+            <SalonTopic Topic="Beauty" />{" "}
           </div>
           <Scrollbars style={{ height: 500 }}>
             {salons
