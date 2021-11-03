@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addNewLocation, addSalon } from "../actions/salon";
@@ -52,7 +51,7 @@ export default function AddingForm() {
     } else if (addSalonSuc) {
       toast.success(addSalonSuc);
     }
-  }, [error]);
+  }, [error, addSalonSuc]);
 
   console.log("Image", parking);
 

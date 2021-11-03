@@ -8,7 +8,7 @@ export default function Services() {
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
 
-  const { salons, salonLoading } = useSelector((state) => state.salon);
+  const { salons } = useSelector((state) => state.salon);
 
   useEffect(() => {
     dispatch(getAllSalons());
