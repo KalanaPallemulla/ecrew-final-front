@@ -49,7 +49,10 @@ export default function Service({ salon }) {
                 <span className="text-gray-400 pl-2 font-light">| Grade A</span>
               </h4>
               <h3 className="hidden md:block font-bold text-2xl text-gray-700">
-                <div className="flex flex-row"> {salon.name} </div>
+                <div className="flex flex-row text-sitetheme-blue">
+                  {" "}
+                  {salon.name}{" "}
+                </div>
               </h3>
               <p className="text-gray-600 text-justify">
                 <ul class="">
@@ -121,19 +124,19 @@ export default function Service({ salon }) {
               <div className="md:grid md:grid-cols-2 w-2/3 text-gray-600">
                 {salon.parking && (
                   <div className="flex flex-row">
-                    Parking <div className="icons8-checkmark ml-2"></div>
+                    Parking <div className="icons8-checkmark ml-2 mt-1"></div>
                   </div>
                 )}
                 {salon.parking && (
                   <div className="flex flex-row">
                     Wifi
-                    <div className="icons8-checkmark ml-2"></div>
+                    <div className="icons8-checkmark ml-2 mt-1"></div>
                   </div>
                 )}
                 {salon.ac && (
                   <div className="flex flex-row">
                     A/C
-                    <div className="icons8-checkmark ml-2"></div>
+                    <div className="icons8-checkmark ml-2 mt-1"></div>
                   </div>
                 )}
               </div>

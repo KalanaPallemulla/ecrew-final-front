@@ -58,7 +58,7 @@ export default function Home() {
                 </button>
               </div> */}
               <div className="relative inline-flex mt-4 w-full">
-                <select
+                {/* <select
                   onChange={(e) => {
                     e.preventDefault();
                     setSelectLoc(e.target.value);
@@ -74,7 +74,7 @@ export default function Home() {
                         {loc.name}
                       </option>
                     ))}
-                </select>
+                </select> */}
               </div>
             </div>
           </div>

@@ -264,6 +264,39 @@ export default function AddingForm() {
             </form>
           </div>
         </div>
+        <table className="table-auto">
+          <thead>
+            <tr>
+              <th className="px-4 py-2">Title</th>
+              <th className="px-4 py-2">Author</th>
+              <th className="px-4 py-2">Views</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td className="border px-4 py-2">Intro to CSS</td>
+              <td className="border px-4 py-2">Adam</td>
+              <td className="border px-4 py-2">858</td>
+            </tr>
+            <tr className="bg-gray-100">
+              <td className="border px-4 py-2">
+                A Long and Winding Tour of the History of UI Frameworks and
+                Tools and the Impact on Design
+              </td>
+              <td className="border px-4 py-2">Adam</td>
+              <td className="border px-4 py-2">112</td>
+            </tr>
+            <tr>
+              <td className="border px-4 py-2">Intro to JavaScript</td>
+              <td className="border px-4 py-2">Chris</td>
+              <td className="border px-4 py-2">
+                <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+                  Button
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>{" "}
       </div>
     </>
   );
